@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="./node_modules/vue/dist/vue.js"></script>
+
+    <title>App vue</title>
+</head>
+<body>
+    <main class="container mt-4">
+        <div id="app">
+            <h1 ref="myTitle"> {{ title }} </h1>
+            <button class="btn-primary" @click="changeTitle">Change</button>
+            <button class="btn-danger" @click="destroy">Destroy</button>
+        </div>
+    </main>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script>
+    Vue.config.productionTip = false;
+    
+    const vm = new Vue({
+        el: '#app',
+        data: {
+            title: 'Welcome to VueJs'
+        },
+        methods: {
+            changeTitle(){
+                this.title = 'New App';
+            },
+            destroy(){
+                this.$destroy();
+            }
+        },
+        computed: {
+        },
+        watch: {
+        },
+        beforeCreate() {
+            console.log('beforeCreate')
+        },
+        created() {
+            console.log('created')
+        },
+        beforeMount() {
+            console.log('beforeMount')
+        },
+        mounted() {
+            console.log('mounted')
+        },
+        beforeUpdate() {
+            console.log('beforeUpdate')
+        },
+        updated() {
+            console.log('updated')
+        },
+        beforeDestroy() {
+            console.log('beforeDestroy')
+        },
+        destroyed() {
+            console.log('destroyed')
+        },
+    });
+
+    console.log(vm);
+
+</script>
+</body>
+</html>
